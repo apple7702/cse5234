@@ -18,6 +18,6 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="/Users/shaw/eclipse-workspace/MyProduct/WebContent/WEB-INF/lib"/>
+	<classpathentry kind="lib" path="/Users/shaw/git/MyProduct/WebContent/WEB-INF/lib"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
