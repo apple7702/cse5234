@@ -7,9 +7,13 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/.apt_generated"/>
+        <dependent-module archiveName="MyLaptop-EJBClient.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/MyLaptop-EJBClient/MyLaptop-EJBClient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                
+        <property name="context-root" value="MyLaptop"/>
                 
         <property name="java-output-path" value="/MyLaptop/WebContent/WEB-INF/classes"/>
-        <property name="context-root" value="MyLaptop"/>
             
     </wb-module>
     
