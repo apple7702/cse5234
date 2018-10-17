@@ -8,7 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="/MyLaptop/css/mystyle.css">
- <link rel="stylesheet" type="text/css" href="/MyLaptop/css/table.css">
+<link rel="stylesheet" type="text/css" href="/MyLaptop/css/table.css">
 <title>View Order Summary</title>
 <style>
 html {
@@ -38,7 +38,7 @@ tr:nth-child(even) {
 
 
 	<br>
-	
+
 	<form:form modelAttribute="vieworder" method="post"
 		action="confirmOrder">
 		<table border="1" width=900>

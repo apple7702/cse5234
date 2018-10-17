@@ -2,6 +2,7 @@ package edu.osu.cse5234.model;
 
 public class ShippingInfo {
 //comment
+	private int id;
 	private String name = null;
 	private String addLine1 = null;
 	private String addLine2 = null;
@@ -10,6 +11,13 @@ public class ShippingInfo {
 	private String zip = null;
 
 	public ShippingInfo() { }
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public String getName() {
 		return name;		

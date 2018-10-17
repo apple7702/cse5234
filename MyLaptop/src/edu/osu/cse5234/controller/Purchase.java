@@ -1,9 +1,11 @@
 package edu.osu.cse5234.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -24,8 +26,14 @@ public class Purchase {
 		Order order = new Order();
 
 		Inventory in=ServiceLocator.getInventoryService().getAvailableInventory();
-		order.setItems(in.getList());
+		List<LineItem> lineItems=new ArrayList<>();
+		for(Item item:in.getList()) {
+			lineItems.add(new LineItem(item));
+		}
+	
 		
+//		order.setItems(in.getList());
+		order.setLineItems(lineItems);
 		request.setAttribute("order", order);
 		
 		request.setAttribute("message", request.getSession().getAttribute("message"));
@@ -54,12 +62,8 @@ public class Purchase {
 
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
 	public String viewPaymentEntryPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
-//		Order order = (Order)request.getSession().getAttribute("order");
+
 		PaymentInfo payment = new PaymentInfo();
-//		payment.setHolderName("");
-//		payment.setccNumber("");
-//		payment.setcvvCode("");
-//		payment.setexpDate("");
 		request.setAttribute("payment", payment);
 		
 		return "PaymentEntryForm";
@@ -75,12 +79,6 @@ public class Purchase {
 	public String viewShippingEntryPage(HttpServletRequest request, HttpServletResponse response) {
 		ShippingInfo shipping = new ShippingInfo();
 
-//		shipping.setName("");
-//		shipping.setAddLine1("");
-//		shipping.setAddLine2("");
-//		shipping.setCity("");
-//		shipping.setState("");
-//		shipping.setZip("");
 		request.setAttribute("shipping", shipping);
 		return "ShippingEntryForm";
 	}

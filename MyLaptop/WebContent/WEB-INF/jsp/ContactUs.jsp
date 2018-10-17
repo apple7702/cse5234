@@ -7,7 +7,7 @@
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 <title>Contact Us</title>
 <link rel="stylesheet" type="text/css" href="/MyLaptop/css/mystyle.css">
- <link rel="stylesheet" type="text/css" href="/MyLaptop/css/table.css">
+<link rel="stylesheet" type="text/css" href="/MyLaptop/css/table.css">
 </head>
 <body>
 	<jsp:include page="header.jsp" />

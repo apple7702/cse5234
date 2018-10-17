@@ -2,12 +2,20 @@ package edu.osu.cse5234.model;
 
 public class PaymentInfo {
 
+	private int id;
 	private String ccNumber = null;
 	private String expDate = null;
 	private String cvvCode = null;
 	private String holderName = null;
 
 	public PaymentInfo() { }
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public String getHolderName() {
 		return holderName;		

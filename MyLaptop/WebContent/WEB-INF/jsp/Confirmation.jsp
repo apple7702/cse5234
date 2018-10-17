@@ -7,7 +7,7 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="/MyLaptop/css/mystyle.css">
- <link rel="stylesheet" type="text/css" href="/MyLaptop/css/table.css">
+<link rel="stylesheet" type="text/css" href="/MyLaptop/css/table.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Order Confirmation</title>
 <style>
@@ -36,8 +36,6 @@ tr:nth-child(even) {
 <body>
 	<jsp:include page="header.jsp" />
 
-
-	<br>
 	<form:form modelAttribute="confirmedorder" method="post">
 		<table border="1" width=900>
 			<tr>
