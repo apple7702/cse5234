@@ -13,36 +13,45 @@
 </head>
 <body>
 
-	<c:out value="${message}" />
-	<form:form modelAttribute="order" method="post"
-		action="purchase/submitItems">
+	<jsp:include page="header.jsp" />
+	<div class="body">
+
+		<c:out value="${message}" />
+		<form:form modelAttribute="order" method="post"
+			action="purchase/submitItems">
 
 
 
-		<table border="1" width=900>
-			<tr>
-				<th>Name</th>
-				<th>Price</th>
-				<th>Quantity</th>
-			</tr>
-
-			<c:forEach items="${order.lineItems}" var="item" varStatus="loop">
+			<table border="1" width=900>
 				<tr>
-					<td><c:out value="${item.itemName}" /> <form:hidden
-							path="lineItems[${loop.index}].itemName" value="${item.itemName}" /></td>
-					<td><c:out value="$${item.price}" /> <form:hidden
-							path="lineItems[${loop.index}].price" value="$${item.price}" /></td>
-					<td><form:input path="lineItems[${loop.index}].quantity" /></td> 
+					<th>Name</th>
+					<th>Price</th>
+					<th>Quantity</th>
 				</tr>
-			</c:forEach>
-			<tr>
-				<td colspan="2"><input type="submit" value="Purchase"></td>
-			</tr>
+
+				<c:forEach items="${order.lineItems}" var="item" varStatus="loop">
+					<form:hidden path="lineItems[${loop.index}].itemNumber"
+						value="${item.itemNumber}" />
+					<tr>
 
 
-		</table>
-	</form:form>
+						<td><c:out value="${item.itemName}" /> <form:hidden
+								path="lineItems[${loop.index}].itemName"
+								value="${item.itemName}" /></td>
+						<td><c:out value="$${item.price}" /> <form:hidden
+								path="lineItems[${loop.index}].price" value="${item.price}" /></td>
+						<td><form:input path="lineItems[${loop.index}].quantity" /></td>
+					</tr>
+				</c:forEach>
+				<tr>
+					<td colspan="2"><input type="submit" value="Purchase"></td>
+				</tr>
 
+
+			</table>
+		</form:form>
+	</div>
+	<jsp:include page="footer.jsp" />
 
 </body>
 </html>

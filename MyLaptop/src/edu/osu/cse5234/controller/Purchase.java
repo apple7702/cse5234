@@ -31,8 +31,6 @@ public class Purchase {
 			lineItems.add(new LineItem(item));
 		}
 	
-		
-//		order.setItems(in.getList());
 		order.setLineItems(lineItems);
 		request.setAttribute("order", order);
 		
@@ -44,9 +42,16 @@ public class Purchase {
 
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) {
+		List<LineItem> lineItems=new ArrayList<>();
+		for(LineItem lItem:order.getLineItems()) {
+			if(lItem.getQuantity()>0) lineItems.add(lItem);
+		}
+		order.setLineItems(lineItems);
 		boolean isValid=ServiceLocator.getOrderProcessingService().validateItemAvailability(order);
 		request.getSession().setAttribute("message", "");
 		if(isValid) {
+
+//			order.truncateLineItems();
 			
 			request.getSession().setAttribute("order", order);
 			return "redirect:/purchase/paymentEntry";
@@ -99,7 +104,7 @@ public class Purchase {
 
 	@RequestMapping(path = "/confirmOrder", method = RequestMethod.POST)
 	public String confirmOrder(@ModelAttribute("order") Order order, HttpServletRequest request) {
-		String confirmCode=ServiceLocator.getOrderProcessingService().processOrder(order);
+		String confirmCode=ServiceLocator.getOrderProcessingService().processOrder((Order)request.getSession().getAttribute("order"));
 		request.getSession().setAttribute("confirmCode", confirmCode);
 		return "redirect:/purchase/viewConfirmation";
 	}

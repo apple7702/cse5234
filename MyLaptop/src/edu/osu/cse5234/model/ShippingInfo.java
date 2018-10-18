@@ -1,14 +1,27 @@
 package edu.osu.cse5234.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="SHIPPING_INFO")
 public class ShippingInfo {
-//comment
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID")
 	private int id;
-	private String name = null;
-	private String addLine1 = null;
-	private String addLine2 = null;
-	private String city = null;
-	private String state = null;
-	private String zip = null;
+	@Transient
+	private String name;
+	@Transient
+	private String addLine1;
+	@Transient
+	private String addLine2;
+	@Transient
+	private String city;
+	@Transient
+	private String state;
+	@Transient
+	private String zip;
 
 	public ShippingInfo() { }
 	

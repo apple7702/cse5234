@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link rel="stylesheet" type="text/css" href="mystyle.css">
+<link rel="stylesheet" type="text/css" href="/MyLaptop/css/mystyle.css">
+<link rel="stylesheet" type="text/css" href="/MyLaptop/css/table.css">
 <title>MyLaptop Inc</title>
 </head>
 <body>

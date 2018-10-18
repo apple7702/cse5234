@@ -37,8 +37,8 @@ tr:nth-child(even) {
 	<jsp:include page="header.jsp" />
 
 
-	<br>
-	<form:form modelAttribute="payment" method="post"
+
+	<form:form modelAttribute="payment" method="post" class="body"
 		action="submitPayment">
 
 		<table border="1" width=900>
@@ -59,5 +59,6 @@ tr:nth-child(even) {
 			</tr>
 		</table>
 	</form:form>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

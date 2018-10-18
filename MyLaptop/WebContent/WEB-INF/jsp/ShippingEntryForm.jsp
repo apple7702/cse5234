@@ -7,7 +7,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" type="text/css" href="/MyLaptop/mystyle.css">
+
+<link rel="stylesheet" type="text/css" href="/MyLaptop/css/mystyle.css">
+<link rel="stylesheet" type="text/css" href="/MyLaptop/css/table.css">
 <title>Enter Shipping Information</title>
 <style>
 html {
@@ -65,5 +67,6 @@ tr:nth-child(even) {
 			</table>
 		</form:form>
 	</div>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>

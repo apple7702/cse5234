@@ -48,13 +48,13 @@ tr:nth-child(even) {
 				<th>Quantity</th>
 				<th>Order ID</th>
 			</tr>
-			<c:forEach items="${vieworder.items}" var="item" varStatus="loop">
+			<c:forEach items="${vieworder.lineItems}" var="item" varStatus="loop">
 				<tr>
-					<td><form:input path="items[${loop.index}].name"
+					<td><form:input path="lineItems[${loop.index}].itemName"
 							readonly="True" /></td>
-					<td><form:input path="items[${loop.index}].price" /></td>
-					<td><form:input path="items[${loop.index}].quantity" /></td>
-					<td><form:input type="text" path="orderNumber" /></td>
+					<td><form:input path="lineItems[${loop.index}].price" /></td>
+					<td><form:input path="lineItems[${loop.index}].quantity" /></td>
+				
 				</tr>
 			</c:forEach>
 			<tr>
@@ -62,5 +62,6 @@ tr:nth-child(even) {
 			</tr>
 		</table>
 	</form:form>
+	<jsp:include page="footer.jsp" />
 </body>
 </html>
